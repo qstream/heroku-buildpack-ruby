@@ -68,6 +68,9 @@ WARNING
 
   def run_assets_precompile_rake_task
     instrument "rails4.run_assets_precompile_rake_task" do
+      log("jammit_compile") do
+        rake.task("compass:compile").invoke(env: rake_env)
+      end
       log("assets_precompile") do
         if Dir.glob('public/assets/manifest-*.json').any?
           puts "Detected manifest file, assuming assets were compiled locally"
