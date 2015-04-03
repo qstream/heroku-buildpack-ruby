@@ -70,7 +70,7 @@ WARNING
     instrument "rails4.run_assets_precompile_rake_task" do
       log("jammit_compile") do
         puts "Preparing rake compass:compile"
-        rake.task("compass:compile").invoke(env: rake_env)
+        rake.task("compass:compile_without_bower").invoke(env: rake_env)
         puts "Finished rake compass:compile"
       end
       log("assets_precompile") do
