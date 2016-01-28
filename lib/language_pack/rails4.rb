@@ -75,6 +75,7 @@ WARNING
         return false unless compiled.success?
         puts "Finished rake compass:compile"
       end
+      return true
       log("assets_precompile") do
         if Dir.glob('public/assets/manifest-*.json').any?
           puts "Detected manifest file, assuming assets were compiled locally"
