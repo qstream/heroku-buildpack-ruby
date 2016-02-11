@@ -72,7 +72,7 @@ WARNING
         puts "Preparing rake compass:compile"
         compiled = rake.task("compass:compile_without_bower")
         compiled.invoke(env: rake_env)
-        return false unless compiled.success?
+        fail "compass:compile_without_bower failed" unless compiled.success?
         puts "Finished rake compass:compile"
       end
       return true
